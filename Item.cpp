@@ -6,6 +6,17 @@ using namespace std;
 // 5. Implement Overloaded Constructor Implementation
 // 6. Implement Destructor (display "Destructor Called")
 
+
+Item::Item(){
+itemCode = 0;
+unitPrice =0;
+}
+
+Item::Item(int pcode, float punitPrice ){
+itemCode = pcode;
+unitPrice =punitPrice;
+}
+
 void Item::setDiscount(float pdiscount) {
   discount = pdiscount;
 }
@@ -21,4 +32,7 @@ float Item::discountedPrice() {
 void Item::display() {
   cout << "Item : " << itemCode << endl;
   cout << "Discounted Price " << discountedPrice() << endl;
+}
+Item::~Item(){
+ cout << " Destructor Called " << endl;
 }
